@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Рейтинг дорам - Корейские дорамы</title>
+</head>
+<body>
+    <h1>Мир корейских дорам</h1>
+    
+    <p>
+        <a href="index.html">Главная</a> | 
+        <a href="table-page.html">Рейтинг дорам</a>
+    </p>
+    <hr>
+
+    <h2>Рейтинг корейских дорам</h2>
+    
+    <form>
+        <h3>Настройка фильтров</h3>
+        <label for="genre">Жанр:</label>
+        <select id="genre" name="genre">
+            <option value="all">Все жанры</option>
+            <option value="Комедия">Комедия</option>
+            <option value="Романтика">Романтика</option>
+            <option value="Драма">Драма</option>
+        </select>
+        
+        <label for="year">Год выпуска:</label>
+        <select id="year" name="year">
+            <option value="all">Все годы</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+        </select>
+        
+        <input type="submit" value="Применить фильтры">
+    </form>
+    
+    <form>
+        <h3>Настройка сортировки</h3>
+        <input type="radio" id="sort-rating" name="sort" value="rating" checked>
+        <label for="sort-rating">По рейтингу</label>
+        
+        <input type="radio" id="sort-year" name="sort" value="year">
+        <label for="sort-year">По году выпуска</label>
+        
+        <input type="radio" id="sort-title" name="sort" value="title">
+        <label for="sort-title">По названию</label>
+        
+        <input type="submit" value="Сортировать">
+    </form>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Название дорамы</th>
+                <th>Год</th>
+                <th>Жанр</th>
+                <th>Серий</th>
+                <th>Рейтинг</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td><a href="synok.html">Сынок</a></td><td>2023</td><td>Фэнтези, Драма</td><td>16</td><td>9.2</td></tr>
+            <tr><td>2</td><td><a href="slava.html">Слава</a></td><td>2022</td><td>Триллер, Драма</td><td>8</td><td>9.1</td></tr>
+            <tr><td>3</td><td><a href="korol-zemli.html">Король земли</a></td><td>2023</td><td>Романтика, Комедия</td><td>16</td><td>8.9</td></tr>
+            <tr><td>4</td><td><a href="lyubov-po-raschetu.html">Любовь по расчету</a></td><td>2022</td><td>Романтика, Комедия</td><td>12</td><td>8.5</td></tr>
+            <tr><td>5</td><td><a href="doktor-chon.html">Доктор Чон</a></td><td>2023</td><td>Медицинская драма</td><td>16</td><td>8.4</td></tr>
+            <tr><td>6</td><td>Восход</td><td>2021</td><td>Исторический, Драма</td><td>20</td><td>8.7</td></tr>
+            <tr><td>7</td><td>Гоблин</td><td>2021</td><td>Фэнтези, Романтика</td><td>16</td><td>8.8</td></tr>
+            <tr><td>8</td><td>Игра в кальмара</td><td>2021</td><td>Триллер, Выживание</td><td>9</td><td>8.9</td></tr>
+            <tr><td>9</td><td>Наследники</td><td>2013</td><td>Романтика, Драма</td><td>20</td><td>8.1</td></tr>
+            <tr><td>10</td><td>Потомки солнца</td><td>2016</td><td>Романтика, Военный</td><td>16</td><td>8.7</td></tr>
+            <tr><td>11</td><td>Городской охотник</td><td>2011</td><td>Экшен, Романтика</td><td>20</td><td>7.9</td></tr>
+            <tr><td>12</td><td>Парень из цветочного магазина</td><td>2022</td><td>Романтика, Драма</td><td>16</td><td>8.3</td></tr>
+            <tr><td>13</td><td>Моя любовь с другой звезды</td><td>2013</td><td>Фэнтези, Романтика</td><td>21</td><td>8.6</td></tr>
+            <tr><td>14</td><td>Легенда о синем море</td><td>2016</td><td>Фэнтези, Романтика</td><td>20</td><td>8.2</td></tr>
+            <tr><td>15</td><td>Силачка До Бон Сун</td><td>2015</td><td>Комедия, Романтика</td><td>16</td><td>8.4</td></tr>
+            <tr><td>16</td><td>Врата ночи</td><td>2023</td><td>Фэнтези, Романтика</td><td>16</td><td>8.6</td></tr>
+            <tr><td>17</td><td>Отель дель Луна</td><td>2019</td><td>Фэнтези, Драма</td><td>16</td><td>8.7</td></tr>
+            <tr><td>18</td><td>Король: Вечный монарх</td><td>2020</td><td>Фэнтези, Романтика</td><td>16</td><td>8.1</td></tr>
+            <tr><td>19</td><td>Итэвон класс</td><td>2020</td><td>Драма, Бизнес</td><td>16</td><td>8.8</td></tr>
+            <tr><td>20</td><td>Старший брат</td><td>2021</td><td>Комедия, Драма</td><td>12</td><td>8.5</td></tr>
+            <tr><td>21</td><td>Молодые леди и джентльмены</td><td>2021</td><td>Романтика, Комедия</td><td>16</td><td>8.0</td></tr>
+            <tr><td>22</td><td>Пентхаус</td><td>2020</td><td>Драма, Триллер</td><td>21</td><td>8.3</td></tr>
+            <tr><td>23</td><td>Винченцо</td><td>2021</td><td>Комедия, Драма</td><td>20</td><td>8.7</td></tr>
+            <tr><td>24</td><td>Мой муж женился снова</td><td>2022</td><td>Драма, Романтика</td><td>16</td><td>8.2</td></tr>
+            <tr><td>25</td><td>Деньги-поезд</td><td>2019</td><td>Экшен, Драма</td><td>16</td><td>7.8</td></tr>
+            <tr><td>26</td><td>Красавица и версия</td><td>2022</td><td>Романтика, Комедия</td><td>16</td><td>8.1</td></tr>
+            <tr><td>27</td><td>Девушка, которая видит запахи</td><td>2015</td><td>Детектив, Романтика</td><td>16</td><td>7.9</td></tr>
+            <tr><td>28</td><td>Ведьма</td><td>2022</td><td>Драма, Триллер</td><td>16</td><td>8.4</td></tr>
+            <tr><td>29</td><td>Моя девушка</td><td>2005</td><td>Романтика, Комедия</td><td>16</td><td>8.2</td></tr>
+            <tr><td>30</td><td>Принц кофе</td><td>2007</td><td>Романтика, Комедия</td><td>17</td><td>8.0</td></tr>
+            <tr><td>31</td><td>Пираты</td><td>2022</td><td>Приключения, Комедия</td><td>12</td><td>7.9</td></tr>
+            <tr><td>32</td><td>Аварийная посадка любви</td><td>2019</td><td>Романтика, Комедия</td><td>16</td><td>8.7</td></tr>
+            <tr><td>33</td><td>Моя ID - Гангнамская красавица</td><td>2018</td><td>Романтика, Комедия</td><td>16</td><td>7.8</td></tr>
+            <tr><td>34</td><td>Что случилось с секретарем Ким?</td><td>2018</td><td>Романтика, Комедия</td><td>16</td><td>8.3</td></tr>
+            <tr><td>35</td><td>Невеста речного бога</td><td>2017</td><td>Фэнтези, Романтика</td><td>20</td><td>7.6</td></tr>
+            <tr><td>36</td><td>Луна, embracing the sun</td><td>2016</td><td>Исторический, Романтика</td><td>20</td><td>8.5</td></tr>
+            <tr><td>37</td><td>Сигнал</td><td>2016</td><td>Детектив, Фэнтези</td><td>16</td><td>8.9</td></tr>
+            <tr><td>38</td><td>Голос</td><td>2017</td><td>Детектив, Триллер</td><td>16</td><td>8.4</td></tr>
+            <tr><td>39</td><td>Тunnel</td><td>2017</td><td>Детектив, Фэнтези</td><td>16</td><td>8.3</td></tr>
+            <tr><td>40</td><td>Пока ты спишь</td><td>2017</td><td>Романтика, Фэнтези</td><td>32</td><td>8.2</td></tr>
+            <tr><td>41</td><td>Чужая душа в моем теле</td><td>2023</td><td>Фэнтези, Романтика</td><td>16</td><td>8.1</td></tr>
+            <tr><td>42</td><td>Королева на семь дней</td><td>2017</td><td>Исторический, Романтика</td><td>20</td><td>8.0</td></tr>
+            <tr><td>43</td><td>Лунные влюбленные</td><td>2016</td><td>Исторический, Романтика</td><td>20</td><td>8.4</td></tr>
+            <tr><td>44</td><td>Вампирский прокурор</td><td>2011</td><td>Фэнтези, Детектив</td><td>12</td><td>7.7</td></tr>
+            <tr><td>45</td><td>Мой прекрасный парень</td><td>2021</td><td>Романтика, Драма</td><td>16</td><td>8.2</td></tr>
+            <tr><td>46</td><td>Дом на колесах</td><td>2020</td><td>Драма, Комедия</td><td>12</td><td>8.6</td></tr>
+            <tr><td>47</td><td>Секретный роман</td><td>2023</td><td>Романтика, Комедия</td><td>14</td><td>8.3</td></tr>
+            <tr><td>48</td><td>Королева училища</td><td>2023</td><td>Драма, Романтика</td><td>16</td><td>8.0</td></tr>
+            <tr><td>49</td><td>Моя прекрасная ложь</td><td>2022</td><td>Драма, Романтика</td><td>16</td><td>7.9</td></tr>
+            <tr><td>50</td><td>Зимняя соната</td><td>2002</td><td>Романтика, Драма</td><td>20</td><td>8.1</td></tr>
+            <tr><td>51</td><td>Осень в моем сердце</td><td>2000</td><td>Романтика, Драма</td><td>16</td><td>7.8</td></tr>
+            <tr><td>52</td><td>Лето с запахом</td><td>2003</td><td>Романтика, Драма</td><td>20</td><td>7.6</td></tr>
+            <tr><td>53</td><td>Весенний вальс</td><td>2006</td><td>Романтика, Драма</td><td>20</td><td>7.5</td></tr>
+            <tr><td>54</td><td>Полный дом</td><td>2004</td><td>Романтика, Комедия</td><td>16</td><td>8.2</td></tr>
+            <tr><td>55</td><td>Мое имя Ким Сэм Сун</td><td>2005</td><td>Романтика, Комедия</td><td>16</td><td>8.3</td></tr>
+        </tbody><td>

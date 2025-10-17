@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Простой фильтр — Топ корейских дорам</title>
+</head>
+<body>
+  <h1>Топ корейских дорам — простой фильтр</h1>
+
+  <form id="filters" onsubmit="applyFilters(); return false;">
+    <fieldset>
+      <legend>Фильтры</legend>
+
+      <label>Название: <input type="text" id="fTitle"></label><br>
+
+      <div>
+        Жанры:<br>
+        <label><input type="checkbox" name="genre" value="Romance"> Romance</label>
+        <label><input type="checkbox" name="genre" value="Comedy"> Comedy</label>
+        <label><input type="checkbox" name="genre" value="Thriller"> Thriller</label>
+        <label><input type="checkbox" name="genre" value="Historical"> Historical</label>
+        <label><input type="checkbox" name="genre" value="Fantasy"> Fantasy</label>
+        <label><input type="checkbox" name="genre" value="Melodrama"> Melodrama</label>
+      </div>
+
+      <label>Год: от <input type="number" id="fYearFrom" style="width:80px"> до <input type="number" id="fYearTo" style="width:80px"></label><br>
+
+      <label>Рейтинг (min): <input type="number" id="fRating" step="0.1" min="0" max="10" style="width:80px"></label><br>
+
+      <label>Актёр/Актриса: <input type="text" id="fActor"></label><br>
+      <label>Режиссёр: <input type="text" id="fDirector"></label><br>
+
+      <label>Эпизоды: от <input type="number" id="fEpsFrom" style="width:80px"> до <input type="number" id="fEpsTo" style="width:80px"></label><br>
+
+      <label>Платформа:
+        <select id="fPlatform">
+          <option value="">(все)</option>
+          <option>Netflix</option>
+          <option>tvN</option>
+          <option>SBS</option>
+          <option>JTBC</option>
+          <option>KBS</option>
+          <option>MBC</option>
+        </select>
+      </label><br>
+
+      <label>Статус:
+        <select id="fStatus">
+          <option value="">(все)</option>
+          <option>Завершена</option>
+          <option>Идёт</option>
+          <option>Анонсирована</option>
+        </select>
+      </label><br>
+
+      <label>Возрастной рейтинг:
+        <select id="fAge">
+          <option value="">(все)</option>
+          <option>13+</option>
+          <option>16+</option>
+          <option>18+</option>
+        </select>
+      </label><br>
+
+      <div>
+        Сортировка:
+        <select id="fSort">
+          <option value="">(нет)</option>
+          <option value="title">Название</option>
+          <option value="year">Год</option>
+          <option value="rating">Рейтинг</option>
+          <option value="episodes">Эпизоды</option>
+          <option value="platform">Платформа</option>
+        </select>
+        <label><input type="checkbox" id="fDesc"> по убыванию</label>
+      </div>
+
+      <button type="submit">Применить</button>
+      <button type="button" onclick="resetFilters()">Сбросить</button>
+    </fieldset>
+  </form>
+
+  <h2>Результаты</h2>
+  <table border="1" id="dramaTable">
+    <thead>
+      <tr>
+        <th>Название</th>
+        <th>Жанр</th>
+        <th>Год</th>
+        <th>Рейтинг</th>
+        <th>Актёры</th>
+        <th>Эпизоды</th>
+        <th>Платформа</th>
+        <th>Статус</th>
+        <th>Возраст</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Примеры строк -->
+      <tr>
+        <td>Crash Landing on You</td>
+        <td>Romance,Comedy</td>
+        <td>2019</td>
+        <td>8.7</td>
+        <td>Hyun Bin, Son Ye-jin</td>
+        <td>16</td>
+        <td>tvN</td>
+        <td>Завершена</td>
+        <td>16+</td>
+      </tr>
+      <tr>
+        <td>Guardian: The Lonely and Great God</td>
+        <td>Romance,Fantasy,Comedy</td>
+        <td>2016</td>
+        <td>8.9</td>
+        <td>Gong Yoo, Kim Go-eun</td>
+        <td>16</td>
+        <td>tvN</td>
+        <td>Завершена</td>
+        <td>16+</td>
+      </tr>
+      <tr>
+        <td>Kingdom</td>
+        <td>Historical,Thriller</td>
+        <td>2019</td>
+        <td>8.4</td>
+        <td>Ju Ji-hoon</td>
+        <td>12</td>
+        <td>Netflix</td>
+        <td>Идёт</td>
+        <td>18+</td>
+      </tr>
+      <tr>
+        <td>Reply 1988</td>
+        <td>Comedy,Melodrama</td>
+        <td>2015</td>
+        <td>9.1</td>
+        <td>Lee Hye-ri</td>
+        <td>20</td>
+        <td>tvN</td>
+        <td>Завершена</td>
+        <td>13+</td>
+      </tr>
+      <tr>
+        <td>Vincenzo</td>
+        <td>Comedy,Thriller</td>
+        <td>2021</td>
+        <td>8.6</td>
+        <td>Song Joong-ki</td>
+        <td>20</td>
+        <td>tvN</td>
+        <td>Завершена</td>
+        <td>18+</td>
+      </tr>
+      <tr>
+        <td>My Mister</td>
+        <td>Melodrama</td>
+        <td>2018</td>
+        <td>8.8</td>
+        <td>Lee Sun-kyun, IU</td>
+        <td>16</td>
+        <td>tvN</td>
+        <td>Завершена</td>
+        <td>18+</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    function textIncludes(haystack, needle) {
+      return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
+    }
+
+    function applyFilters() {
+      var title = document.getElementById('fTitle').value.trim();
+      var genres = Array.from(document.querySelectorAll('input[name="genre"]:checked')).map(function(i){return i.value});
+      var yearFrom = parseInt(document.getElementById('fYearFrom').value) || null;
+      var yearTo = parseInt(document.getElementById('fYearTo').value) || null;
+      var ratingMin = parseFloat(document.getElementById('fRating').value) || null;
+      var actor = document.getElementById('fActor').value.trim();
+      var director = document.getElementById('fDirector').value.trim();
+      var epsFrom = parseInt(document.getElementById('fEpsFrom').value) || null;
+      var epsTo = parseInt(document.getElementById('fEpsTo').value) || null;
+      var platform = document.getElementById('fPlatform').value;
+      var status = document.getElementById('fStatus').value;
+      var age = document.getElementById('fAge').value;
+
+      var table = document.getElementById('dramaTable');
+      var tbody = table.tBodies[0];
+      var rows = Array.from(tbody.rows);
+
+      rows.forEach(function(row){
+        var cells = row.cells;
+        var cTitle = cells[0].textContent.trim();
+        var cGenre = cells[1].textContent.trim();
+        var cYear = parseInt(cells[2].textContent.trim()) || 0;
+        var cRating = parseFloat(cells[3].textContent.trim()) || 0;
+        var cActors = cells[4].textContent.trim();
+        var cEps = parseInt(cells[5].textContent.trim()) || 0;
+        var cPlatform = cells[6].textContent.trim();
+        var cStatus = cells[7].textContent.trim();
+        var cAge = cells[8].textContent.trim();
+
+        var visible = true;
+
+        if (title && !textIncludes(cTitle, title)) visible = false;
+
+        if (genres.length > 0) {
+          // require that row contains at least one selected genre
+          var has = genres.some(function(g){ return cGenre.toLowerCase().indexOf(g.toLowerCase()) !== -1; });
+          if (!has) visible = false;
+        }
+
+        if (yearFrom !== null && cYear < yearFrom) visible = false;
+        if (yearTo !== null && cYear > yearTo) visible = false;
+
+        if (ratingMin !== null && cRating < ratingMin) visible = false;
+
+        if (actor && !textIncludes(cActors, actor)) visible = false;
+
+        if (director) {
+          // sample data doesn't have director column; keep for future compatibility
+          var cDirector = '';
+          if (!textIncludes(cDirector, director)) visible = false;
+        }
+
+        if (epsFrom !== null && cEps < epsFrom) visible = false;
+        if (epsTo !== null && cEps > epsTo) visible = false;
+
+        if (platform && platform !== cPlatform) visible = false;
+        if (status && status !== cStatus) visible = false;
+        if (age && age !== cAge) visible = false;
+
+        row.style.display = visible ? '' : 'none';
+      });
+
+      applySort();
+    }
+
+    function resetFilters() {
+      document.getElementById('filters').reset();
+      var rows = Array.from(document.getElementById('dramaTable').tBodies[0].rows);
+      rows.forEach(function(r){ r.style.display = ''; });
+      // remove sorting selection
+      document.getElementById('fSort').value = '';
+      document.getElementById('fDesc').checked = false;
+    }
+
+    function applySort() {
+      var sort = document.getElementById('fSort').value;
+      var desc = document.getElementById('fDesc').checked;
+      if (!sort) return; // ничего
+
+      var table = document.getElementById('dramaTable');
+      var tbody = table.tBodies[0];
+      var rows = Array.from(tbody.rows).filter(function(r){ return r.style.display !== 'none'; });
+
+      var indexMap = { title:0, year:2, rating:3, episodes:5, platform:6 };
+      var idx = indexMap[sort];
+
+      rows.sort(function(a,b){
+        var va = a.cells[idx].textContent.trim();
+        var vb = b.cells[idx].textContent.trim();
+        // numeric columns
+        if (idx === 2 || idx === 3 || idx === 5) {
+          var na = parseFloat(va) || 0;
+          var nb = parseFloat(vb) || 0;
+          return desc ? nb - na : na - nb;
+        }
+        // text columns
+        var res = va.localeCompare(vb, 'ru', {sensitivity:'base'});
+        return desc ? -res : res;
+      });
+
+      // re-append sorted rows to tbody
+      rows.forEach(function(r){ tbody.appendChild(r); });
+    }
+  </script>
+</body>
+</html>
