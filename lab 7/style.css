@@ -1,0 +1,55 @@
+
+
+.row{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.f{
+  min-width: 220px;
+}
+
+label{
+  display: block;
+  margin: 0 0 4px;
+}
+
+input, select, button{
+  padding: 6px 8px;
+}
+
+
+.err input{
+  border: 2px solid #b42318;
+  background: #fff1f0;
+}
+
+.e{
+  color: #b42318;
+  font-size: 12px;
+  margin-top: 4px;
+  display: none;
+}
+
+.err .e{
+  display: block;
+}
+
+.img{
+  max-width: 520px;
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+}
+
+
+#findTitle{
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+#findTitle.bad{
+  color: #b42318;
+}

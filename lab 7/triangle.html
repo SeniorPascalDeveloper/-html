@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Вариант 11 — Параллелограмм</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h3>Калькулятор характеристик параллелограмма (Вариант 11)</h3>
+
+<div class="row">
+  <div class="f" style="min-width:360px">
+    <label for="mode">Тип входных данных</label>
+    <select id="mode">
+      <option value="m1">a, h (к a) и угол alpha</option>
+      <option value="m2">a, beta и h (к a)</option>
+    </select>
+  </div>
+  <button id="show" type="button">Показать</button>
+</div>
+
+<div class="row">
+  <img id="img" src="image1.png" alt="рисунок" class="img">
+</div>
+
+<div class="row">
+  <div class="f errbox" id="wa">
+    <label for="a">Сторона a</label>
+    <input id="a" inputmode="decimal" placeholder="например, 5.2">
+    <div class="e"></div>
+  </div>
+
+  <div class="f errbox" id="wBeta">
+    <label for="beta">Сторона beta</label>
+    <input id="beta" inputmode="decimal" placeholder="например, 3.8">
+    <div class="e"></div>
+  </div>
+
+  <div class="f errbox" id="wh">
+    <label for="h">Высота h (к a)</label>
+    <input id="h" inputmode="decimal" placeholder="например, 2.1">
+    <div class="e"></div>
+  </div>
+
+  <div class="f errbox" id="wAlpha">
+    <label for="alpha">Угол alpha (°)</label>
+    <input id="alpha" inputmode="decimal" placeholder="например, 35">
+    <div class="e"></div>
+  </div>
+</div>
+
+<div id="findTitle">Найти</div>
+
+<div class="row">
+  <label><input type="checkbox" id="c1" checked> угол между диагоналями</label>
+  <label><input type="checkbox" id="c2" checked> диагонали</label>
+  <label><input type="checkbox" id="c3" checked> периметр</label>
+</div>
+
+<div class="row">
+  <button id="calc" type="button">Вычислить</button>
+  <button id="clr" type="button">Очистить</button>
+</div>
+
+<div id="out"></div>
+
+<script src="cod.js"></script>
+</body>
+</html>
