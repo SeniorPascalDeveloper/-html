@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>Фильтры и сортировка</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="data.js"></script>
+  <script defer src="main.js"></script>
+  <script defer src="table.js"></script>
+  <script defer src="sort.js"></script>
+  <script defer src="filter.js"></script>
+</head>
+
+<body>
+  <form id="filter">
+    <p>
+      <label for="structure">Название:</label>
+      <input type="text" id="structure">
+    </p>
+    <p>
+      <label for="genre">Жанр:</label>
+      <input type="text" id="genre">
+    </p>
+    <p>
+      <label for="yearFrom">Год:</label>
+      от <input type="number" id="yearFrom">
+      до <input type="number" id="yearTo">
+    </p>
+    <p>
+      <label for="ratingFrom">Рейтинг:</label>
+      от <input type="number" id="ratingFrom">
+      до <input type="number" id="ratingTo">
+    </p>
+    <p>
+      <label for="status">Статус:</label>
+      <input type="text" id="status">
+    </p>
+    
+    <button type="button" id="find-filtered-items-button">Найти</button>
+    <button type="button" id="clear-filter-button">Очистить фильтры</button>
+  </form>
+
+  <form id="sort">
+    <p> Сортировать по</p>
+    <p>1 уровень 
+      <select id="fieldsFirst">
+      </select>
+      по убыванию? <input type="checkbox" id="fieldsFirstDesc">
+    </p>
+    <p>
+      2 уровень <select id="fieldsSecond">
+      </select>
+      по убыванию? <input type="checkbox" id="fieldsSecondDesc">
+    </p>
+    <p>
+      3 уровень <select id="fieldsThird">
+      </select>
+      по убыванию? <input type="checkbox" id="fieldsThirdDesc">
+    </p>
+    <input type="button" id="sort-button" value="Сортировать">
+    <input type="button" id="reset-button" value="Сбросить сортировку">
+  </form>
+
+  <table id="list">
+  </table>
+
+</body>
+
+</html>

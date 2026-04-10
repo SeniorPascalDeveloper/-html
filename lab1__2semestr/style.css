@@ -1,0 +1,16 @@
+table#list {
+    border-collapse: collapse;
+}
+
+table#list>tr {
+    background-color: #d3d3d3;
+}
+
+table#list>tbody>tr>td {
+    background-color: #efefef;
+}
+
+table#list td,
+table#list th {
+    border: 2px solid #dddddd;
+}
