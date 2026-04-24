@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Трансформация и анимация</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="http://d3js.org/d3.v7.min.js"></script>
+    <script src="JavaScript/main.js"></script>
+    <script src="JavaScript/image.js"></script>
+    <script src = "JavaScript/path.js"></script>
+  </head>
+  <body>   
+    <form id="setting">
+        <div>
+            <span id="coordinate">Координаты рисунка<br>
+                x: <input type="number" id="cx" value="300">
+                <input type="number" id="cx2" value="550" class="hide"><br>
+                y: <input type="number" id="cy" value="300">
+                <input type="number" id="cy2" value="550" class="hide">
+            </span>
+
+            <span id = "path" class="hideSecond">
+                <select id="pathType">
+                <option value="0">Буквой Г</option>
+                <option value="1">По кругу</option>
+            </select>
+            </span>
+
+            <span>Масштаб<br>
+                по x: <input type="number" id="scaleX" value="1" step="0.1">
+                <input type="number" id="scaleX2" value="1.5" step="0.1" class="hide"><br>
+                по y: <input type="number" id="scaleY" value="1" step="0.1">
+                <input type="number" id="scaleY2" value="1.5" step="0.1" class="hide">
+            </span>
+
+            <span>Поворот<br>
+                угол: <input type="number" id="angle" value="0">
+                <input type="number" id="angle2" value="180" class="hide">
+            </span>
+        </div>
+
+        <div>
+            <button type="button" id="drawBtn">Нарисовать</button>
+            <button type="button" id="clearBtn">Очистить</button>
+        </div>
+
+        <div>
+            <label>
+                <input type="checkbox" id="animateToggle">
+                Включить анимацию?
+            </label>
+            <select id="easeType" class="hide">
+                <option value="linear">linear</option>
+                <option value="elastic">elastic</option>
+                <option value="bounce">bounce</option>
+            </select>
+            <div>
+            <label  class="hide">
+                <input type="checkbox" id="animatePath">
+                Перемещение вдоль пути?
+            </label>
+            </div>
+            <button type="button" id="animateBtn" class="hide">Анимировать</button>
+        </div>
+
+    </form>
+
+    <svg></svg>
+  </body>
+</html>
