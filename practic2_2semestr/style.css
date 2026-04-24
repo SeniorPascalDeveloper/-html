@@ -1,0 +1,22 @@
+.hide {
+    display: none;
+}
+
+.hideSecond {
+    display: none;
+}
+
+input[type="number"] {
+    width: 60px;
+    margin: 2px;
+}
+
+span {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+}
+
+div {
+    margin: 10px 0;
+}
